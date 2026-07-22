@@ -47,15 +47,12 @@ export function Header() {
             "font-display text-2xl tracking-tight transition-colors md:text-[1.7rem]",
             solid ? "text-charcoal" : "text-cream-soft",
           ].join(" ")}
-          aria-label={`${site.name} home`}
+          aria-label={`${site.displayName} home`}
         >
           Alekhya<span className="text-terracotta">Studio</span>
         </Link>
 
-        <nav
-          className="hidden items-center gap-7 lg:flex"
-          aria-label="Primary"
-        >
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -63,6 +60,11 @@ export function Header() {
               className={[
                 "text-sm tracking-wide transition-colors hover:text-terracotta",
                 solid ? "text-charcoal-muted" : "text-cream/85",
+                pathname === link.href || pathname.startsWith(`${link.href}/`)
+                  ? solid
+                    ? "text-terracotta"
+                    : "text-cream"
+                  : "",
               ].join(" ")}
             >
               {link.label}
@@ -74,7 +76,7 @@ export function Header() {
             variant={solid ? "primary" : "secondary"}
             size="sm"
           >
-            Book a Session
+            Book a Consultation
           </Button>
         </nav>
 
@@ -135,9 +137,16 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            className="rounded-sm px-3 py-3 text-lg text-charcoal transition hover:bg-cream-deep hover:text-terracotta"
+            onClick={() => setOpen(false)}
+          >
+            Contact
+          </Link>
           <div className="mt-4 px-3">
             <Button href={site.calendly} external variant="primary" className="w-full">
-              Book a Session
+              Book a Consultation
             </Button>
           </div>
         </nav>

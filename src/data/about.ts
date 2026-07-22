@@ -2,56 +2,65 @@ export const testimonials = [
   {
     id: "t1",
     quote:
-      "Alekhya captured our daughter's Arangetram with such tenderness — every mudra, every emotion. The photos feel like heirlooms.",
+      "Alekhya photographed our daughter's Rangapravesha with such tenderness — every mudra, every emotion. The images feel like heirlooms.",
     name: "Meera Krishnan",
-    role: "Arangetram parent",
-    service: "Photography & Video",
+    role: "Rangapravesha parent",
+    service: "Photography",
   },
   {
     id: "t2",
     quote:
-      "The stage décor and return gifts were exquisite. Guests kept asking who made them. Truly craft with soul.",
+      "Our Arangetram invitation suite finally felt like us — warm, cultural, and refined. Guests still talk about it.",
     name: "Ananya Reddy",
-    role: "Event host",
-    service: "Arts & Crafts",
+    role: "Arangetram family",
+    service: "Invitations",
   },
   {
     id: "t3",
     quote:
-      "Our invitation suite and brand kit finally feel like us — warm, cultural, and modern. Working with Alekhya was effortless.",
-    name: "Rahul & Priya",
-    role: "Newlyweds",
-    service: "Design",
+      "They rebuilt our academy site and brand. Enquiries from new students increased within weeks — and it still feels elegant.",
+    name: "Sanjana Iyer",
+    role: "Dance academy director",
+    service: "Branding & Web",
   },
   {
     id: "t4",
     quote:
-      "They rebuilt our studio site from the ground up. Fast, beautiful, and our booking inquiries doubled in a month.",
-    name: "Sanjana Iyer",
-    role: "Dance instructor",
-    service: "Web Design",
+      "As a performer, I needed a portfolio that matched my stage presence. Alekhya understood the art before the pixels.",
+    name: "Rahul Menon",
+    role: "Bharatanatyam artist",
+    service: "Artist Portfolio",
   },
 ];
 
 export const about = {
-  headline: "Crafted light. Cultural heart.",
+  headline: "Crafted for the classical stage.",
   story: [
-    "AlekhyaStudio began as a love letter to the moments that deserve to be held — the first Arangetram, the quiet portrait, the handmade detail on a stage.",
-    "We are a boutique creative practice blending photography, craft, and design. Every project is personal: fewer clients, deeper care, work that feels like it belongs to you.",
-    "Whether behind the lens or at the worktable, we chase warmth — golden-hour colour, tactile materials, and stories rooted in culture yet made for today.",
+    "Alekhya Studio exists for India's performing arts community — dancers, musicians, teachers, and the families who celebrate debuts.",
+    "We understand costume, abhinaya, lineage, and the quiet nervousness before a Rangapravesha. That cultural fluency shapes every photograph, invitation, and digital presence we create.",
+    "Our work is minimal, premium, and emotionally precise — closer to a curated gallery than a generic agency.",
   ],
   philosophy: [
-    { title: "Presence over polish", text: "We chase feeling first — then refine until it's effortless." },
-    { title: "Culture, contemporary", text: "Tradition deserves modern storytelling without losing its soul." },
-    { title: "Made by hand", text: "From props to pixels, we favour craft, care, and collaboration." },
+    {
+      title: "Art before template",
+      text: "Every project begins with the artist's story — never a one-size layout.",
+    },
+    {
+      title: "Tradition, contemporary",
+      text: "Classical roots deserve modern presentation without losing soul.",
+    },
+    {
+      title: "Quiet luxury",
+      text: "Fewer projects, deeper care, and work that feels timeless.",
+    },
   ],
   team: [
     {
       name: "Alekhya",
-      role: "Founder · Photographer & Creative Lead",
-      bio: "Storyteller with a lens and a sketchbook — specializing in cultural celebrations, portraits, and brand worlds.",
+      role: "Founder · Creative Lead",
+      bio: "Storyteller for the performing arts — specializing in classical dance photography, debut invitations, and artist brands.",
       src: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80",
-      alt: "Portrait of Alekhya, founder of AlekhyaStudio",
+      alt: "Portrait of Alekhya, founder of Alekhya Studio",
     },
   ],
 };

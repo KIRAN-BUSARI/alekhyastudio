@@ -1,6 +1,6 @@
-# AlekhyaStudio
+# Alekhya Studio
 
-Boutique creative studio portfolio — photography & videography, arts & crafts, graphic design, and web design/development.
+Premium creative studio website for India's classical performing arts community — dance photography, Rangapravesha/Arangetram invitations, branding, websites, marketing, and creative design.
 
 ## Stack
 
@@ -8,6 +8,7 @@ Boutique creative studio portfolio — photography & videography, arts & crafts,
 - TypeScript
 - Tailwind CSS v4
 - Cormorant Garamond + Figtree
+- Vercel Analytics
 
 ## Getting started
 
@@ -18,14 +19,14 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Pages
+## Routes
 
-- `/` — one-page overview (hero → contact)
-- `/photography` — filterable gallery
-- `/arts-crafts` — masonry crafts + Instagram-style feed
-- `/design` — before/after design showcase
-- `/web` — process, stack, past sites, pricing
-- `/about` — studio story
-- `/contact` — form, WhatsApp/Instagram, booking calendar CTA
+- `/` — gallery homepage
+- `/work` — unified portfolio
+- `/photography` — dance photography & videography
+- `/invitations` — Rangapravesha / Arangetram invitations
+- `/services` — services overview
+- `/branding` · `/websites` · `/marketing` · `/creative`
+- `/about` · `/contact`
 
-Update contact links and placeholders in `src/data/site.ts`.
+Update contact links in `src/data/site.ts`.

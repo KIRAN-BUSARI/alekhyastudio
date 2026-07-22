@@ -10,7 +10,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The story, philosophy, and people behind AlekhyaStudio — a boutique creative practice in Bangalore.",
+    "Alekhya Studio is a premium creative practice for India's classical performing arts community — based in Bangalore.",
 };
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title={about.headline}
-        description="A boutique studio devoted to photography, craft, and design — culturally rooted, warmly modern."
+        description="A boutique studio devoted to dance photography, invitations, branding, and digital presence for performing artists."
       />
 
       <section className="px-5 py-16 md:px-8 md:py-24">
@@ -82,10 +82,14 @@ export default function AboutPage() {
       </section>
 
       <CTABanner
-        title="Work with us"
-        description={`Based in ${site.location} — available for sessions, crafts, design, and web projects.`}
+        title="Work with Alekhya Studio"
+        description={`Based in ${site.location} — serving artists, academies, and families across the classical performing arts.`}
         primary={{ href: "/contact", label: "Get in touch" }}
-        secondary={{ href: site.calendly, label: "Book a Session", external: true }}
+        secondary={{
+          href: site.calendly,
+          label: "Book a Consultation",
+          external: true,
+        }}
       />
     </>
   );

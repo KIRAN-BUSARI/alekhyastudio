@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Figtree } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { site } from "@/data/site";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -22,12 +23,22 @@ const body = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — Photography, Craft & Design`,
-    template: `%s · ${site.name}`,
+    default: `${site.displayName} — Dance Photography & Performing Arts Branding`,
+    template: `%s · ${site.displayName}`,
   },
   description: site.description,
+  keywords: [
+    "Dance Photography",
+    "Bharatanatyam Photography",
+    "Arangetram Photography",
+    "Rangapravesha Invitation Design",
+    "Dance Website Design",
+    "Artist Portfolio Website",
+    "Dance Branding",
+    "Classical Dance Marketing",
+  ],
   openGraph: {
-    title: site.name,
+    title: site.displayName,
     description: site.description,
     type: "website",
     locale: "en_IN",
@@ -51,6 +62,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );

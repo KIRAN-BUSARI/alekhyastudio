@@ -10,9 +10,9 @@ export function ContactSection() {
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:gap-16">
         <FadeIn>
           <SectionHeading
-            eyebrow="Contact"
-            title="Let's make something beautiful"
-            description="Share a few details about your project — or book a session directly on the calendar."
+            eyebrow="Enquire"
+            title="Begin a conversation"
+            description="Book a consultation, or send a few details — we'll guide the right next step for your art."
           />
           <ul className="mt-8 space-y-4 text-charcoal-muted">
             <li>
@@ -36,11 +36,8 @@ export function ContactSection() {
               <Button href={site.whatsapp} external variant="teal" size="sm">
                 WhatsApp
               </Button>
-              <Button href={site.instagram} external variant="ghost" size="sm">
-                Instagram
-              </Button>
               <Button href={site.calendly} external variant="primary" size="sm">
-                Booking calendar
+                Book a Consultation
               </Button>
             </li>
           </ul>

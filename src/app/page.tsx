@@ -1,9 +1,9 @@
 import { Hero } from "@/components/home/Hero";
-import { PhotographyTeaser } from "@/components/home/PhotographyTeaser";
-import { ArtsCraftsTeaser } from "@/components/home/ArtsCraftsTeaser";
-import { DesignTeaser } from "@/components/home/DesignTeaser";
-import { WebTeaser } from "@/components/home/WebTeaser";
-import { AboutTeaser } from "@/components/home/AboutTeaser";
+import { Manifesto } from "@/components/home/Manifesto";
+import { Audience } from "@/components/home/Audience";
+import { FeaturedWork } from "@/components/home/FeaturedWork";
+import { SignatureOffering } from "@/components/home/SignatureOffering";
+import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { ContactSection } from "@/components/home/ContactSection";
 
@@ -11,11 +11,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <PhotographyTeaser />
-      <ArtsCraftsTeaser />
-      <DesignTeaser />
-      <WebTeaser />
-      <AboutTeaser />
+      <Manifesto />
+      <Audience />
+      <FeaturedWork />
+      <SignatureOffering />
+      <ServicesOverview />
       <Testimonials />
       <ContactSection />
     </>

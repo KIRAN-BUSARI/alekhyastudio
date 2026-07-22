@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a session, request a design, or get a quote — contact AlekhyaStudio via form, WhatsApp, or Instagram.",
+    "Book a consultation or enquire about dance photography, Rangapravesha invitations, branding, websites, and marketing with Alekhya Studio in Bangalore.",
 };
 
 export default function ContactPage() {
@@ -16,8 +16,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Book, request, or enquire"
-        description="Choose the path that fits — photography bookings, craft & design requests, or a web quote."
+        title="Book, enquire, or consult"
+        description="Choose photography, invitations, branding, websites, marketing, or creative — or schedule a consultation."
       />
 
       <section className="px-5 py-16 md:px-8 md:py-24">
@@ -70,31 +70,22 @@ export default function ContactPage() {
 
             <div className="mt-10 border border-charcoal/10 bg-cream-soft p-6">
               <h3 className="font-display text-2xl text-charcoal">
-                Booking calendar
+                Consultation calendar
               </h3>
               <p className="mt-2 text-sm text-charcoal-muted">
-                Prefer to pick a time? Open the calendar for consultation and
-                session slots.
+                Prefer to pick a time? Open the calendar for consultation slots.
               </p>
               <div className="mt-4">
                 <Button href={site.calendly} external variant="primary">
-                  Open calendar
+                  Book a Consultation
                 </Button>
-              </div>
-              <div
-                className="mt-6 flex aspect-[4/3] items-center justify-center border border-dashed border-charcoal/15 bg-cream text-center text-sm text-charcoal-muted"
-                aria-hidden
-              >
-                <p className="max-w-[14rem]">
-                  Embed your Calendly or booking widget here when ready.
-                </p>
               </div>
             </div>
           </FadeIn>
 
           <FadeIn delay={80}>
             <h2 className="mb-6 font-display text-3xl text-charcoal">
-              Send a message
+              Send an enquiry
             </h2>
             <ContactFormWithParams />
           </FadeIn>

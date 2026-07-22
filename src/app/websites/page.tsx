@@ -10,26 +10,33 @@ import {
   TechStack,
 } from "@/components/web/WebSections";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { getService } from "@/data/services";
 import { pastSites } from "@/data/web";
 import { site } from "@/data/site";
 
+const service = getService("websites");
+
 export const metadata: Metadata = {
-  title: "Website Design & Development",
-  description:
-    "Process, tech stack, past sites, and pricing tiers for boutique websites by AlekhyaStudio.",
+  title: service.seoTitle,
+  description: service.seoDescription,
 };
 
-export default function WebPage() {
+export default function WebsitesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Web Design & Development"
-        title="Digital homes for creative work"
-        description="From one-page portfolios to multi-page studio sites — designed for beauty, clarity, and bookings."
+        eyebrow={service.eyebrow}
+        title="Artist portfolio & institute websites"
+        description={service.description}
       >
-        <Button href="/contact?service=web" variant="primary" size="lg">
-          Get a Quote
-        </Button>
+        <div className="flex flex-wrap gap-3">
+          <Button href={service.cta.href} variant="primary" size="lg">
+            {service.cta.label}
+          </Button>
+          <Button href={site.whatsapp} external variant="secondary" size="lg">
+            WhatsApp
+          </Button>
+        </div>
       </PageHero>
 
       <section className="px-5 py-16 md:px-8 md:py-24">
@@ -38,8 +45,8 @@ export default function WebPage() {
             <FadeIn>
               <SectionHeading
                 eyebrow="Process"
-                title="How we build"
-                description="A clear four-step journey from discovery to launch — collaborative and calm."
+                title="How we build artist websites"
+                description="A clear four-step journey from discovery to launch."
               />
             </FadeIn>
             <div className="mt-12">
@@ -49,11 +56,7 @@ export default function WebPage() {
 
           <div>
             <FadeIn>
-              <SectionHeading
-                eyebrow="Tech stack"
-                title="Modern, maintainable tools"
-                description="We choose stacks that stay fast, accessible, and easy for you to update."
-              />
+              <SectionHeading eyebrow="Stack" title="Modern, maintainable tools" />
             </FadeIn>
             <FadeIn className="mt-8">
               <TechStack />
@@ -63,9 +66,9 @@ export default function WebPage() {
           <div>
             <FadeIn>
               <SectionHeading
-                eyebrow="Selected work"
-                title="Past sites"
-                description="A glimpse of digital experiences we've shaped for creative clients."
+                eyebrow="Selected sites"
+                title="Past websites"
+                description="Portfolios and institutes designed for bookings and credibility."
               />
             </FadeIn>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -101,8 +104,8 @@ export default function WebPage() {
             <FadeIn>
               <SectionHeading
                 eyebrow="Investment"
-                title="Pricing tiers"
-                description="Transparent starting points — every project is scoped to your needs. Prefer a custom path? Ask for a quote."
+                title="Website packages"
+                description="Transparent starting points — every project is scoped to your art and audience."
               />
             </FadeIn>
             <div className="mt-12">
@@ -113,10 +116,14 @@ export default function WebPage() {
       </section>
 
       <CTABanner
-        title="Ready for a new site?"
-        description="Tell us about your studio, pages, and timeline — we'll send a thoughtful proposal."
-        primary={{ href: "/contact?service=web", label: "Get a Quote" }}
-        secondary={{ href: site.calendly, label: "Book a call", external: true }}
+        title="Need a dance institute or artist website?"
+        description="Get a quote for portfolio sites, academy sites, and redesigns built for enquiries."
+        primary={{ href: "/contact?service=web", label: "Get a Website Quote" }}
+        secondary={{
+          href: site.calendly,
+          label: "Book a call",
+          external: true,
+        }}
       />
     </>
   );

@@ -11,14 +11,14 @@ export function Testimonials() {
       <div className="relative mx-auto max-w-7xl">
         <FadeIn>
           <SectionHeading
-            eyebrow="Kind words"
-            title="What clients remember"
-            description="A few notes from families, dancers, and founders we've had the joy of working with."
+            eyebrow="Trust"
+            title="Words from the community"
+            description="Parents, performers, and academies who entrusted us with their milestones."
             align="center"
           />
         </FadeIn>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
           {testimonials.map((item, i) => (
             <FadeIn key={item.id} delay={i * 70}>
               <blockquote className="h-full border-l-2 border-terracotta/60 pl-6">

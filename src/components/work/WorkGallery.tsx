@@ -3,21 +3,20 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import {
-  photoCategories,
-  photographyItems,
-  type PhotoCategory,
-} from "@/data/photography";
+  workCategories,
+  workItems,
+  type WorkCategory,
+} from "@/data/work";
 import { Button } from "@/components/shared/Button";
-import { site } from "@/data/site";
 
-export function FilterableGallery() {
-  const [active, setActive] = useState<PhotoCategory>("all");
+export function WorkGallery() {
+  const [active, setActive] = useState<WorkCategory>("all");
 
   const items = useMemo(
     () =>
       active === "all"
-        ? photographyItems
-        : photographyItems.filter((item) => item.category === active),
+        ? workItems
+        : workItems.filter((item) => item.category === active),
     [active],
   );
 
@@ -26,9 +25,9 @@ export function FilterableGallery() {
       <div
         className="mb-10 flex gap-2 overflow-x-auto pb-2"
         role="tablist"
-        aria-label="Filter gallery by category"
+        aria-label="Filter work by category"
       >
-        {photoCategories.map((category) => {
+        {workCategories.map((category) => {
           const selected = active === category.id;
           return (
             <button
@@ -76,7 +75,7 @@ export function FilterableGallery() {
               <div className="mt-3">
                 <h3 className="font-display text-xl text-charcoal">{item.title}</h3>
                 <p className="text-xs uppercase tracking-[0.16em] text-charcoal-muted">
-                  {photoCategories.find((c) => c.id === item.category)?.label}
+                  {workCategories.find((c) => c.id === item.category)?.label}
                 </p>
               </div>
             </article>
@@ -84,12 +83,9 @@ export function FilterableGallery() {
         ))}
       </ul>
 
-      <div className="mt-14 flex flex-wrap justify-center gap-3">
-        <Button href="/contact?service=photo" variant="primary" size="lg">
-          Book a Shoot
-        </Button>
-        <Button href={site.whatsapp} external variant="ghost" size="lg">
-          WhatsApp
+      <div className="mt-14 text-center">
+        <Button href="/contact" variant="primary" size="lg">
+          Enquire about a project
         </Button>
       </div>
     </div>

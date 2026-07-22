@@ -3,19 +3,24 @@
 import { FormEvent, useState, type ReactNode } from "react";
 import { Button } from "./Button";
 
-const services = [
-  "Photography / Videography",
-  "Arts & Crafts",
-  "Invitation / Brand Design",
-  "Website Design & Development",
+export const contactServices = [
+  "Dance Photography / Videography",
+  "Rangapravesha / Arangetram Invitations",
+  "Artist / Academy Branding",
+  "Website Design",
+  "Digital Marketing",
+  "Creative Design",
+  "Consultation",
   "Other",
 ] as const;
+
+export type ContactService = (typeof contactServices)[number];
 
 const fieldClass =
   "w-full rounded-sm border border-charcoal/15 bg-cream-soft px-4 py-3 text-charcoal outline-none transition focus:border-terracotta focus:ring-2 focus:ring-terracotta/20";
 
 type ContactFormProps = {
-  defaultService?: (typeof services)[number];
+  defaultService?: ContactService;
 };
 
 export function ContactForm({ defaultService }: ContactFormProps) {
@@ -34,8 +39,8 @@ export function ContactForm({ defaultService }: ContactFormProps) {
       >
         <p className="font-display text-2xl text-teal">Thank you</p>
         <p className="mt-2 text-charcoal-muted">
-          Your message is ready to send — we&apos;ll be in touch within 1–2
-          business days. For faster replies, reach us on WhatsApp.
+          Your enquiry is ready — we&apos;ll respond within 1–2 business days.
+          For faster replies, message us on WhatsApp.
         </p>
       </div>
     );
@@ -88,7 +93,7 @@ export function ContactForm({ defaultService }: ContactFormProps) {
             <option value="" disabled>
               Select a service
             </option>
-            {services.map((service) => (
+            {contactServices.map((service) => (
               <option key={service} value={service}>
                 {service}
               </option>
@@ -103,11 +108,11 @@ export function ContactForm({ defaultService }: ContactFormProps) {
           required
           rows={5}
           className={`${fieldClass} resize-y`}
-          placeholder="Tell us about your project, date, and vision…"
+          placeholder="Tell us about the art form, date, and what you need…"
         />
       </Field>
       <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
-        Send Message
+        Send Enquiry
       </Button>
     </form>
   );

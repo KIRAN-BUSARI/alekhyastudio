@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { instagramFeed } from "@/data/crafts";
+import { photographyItems } from "@/data/photography";
 import { footerLinks, site } from "@/data/site";
+
+const feed = photographyItems.slice(0, 6);
 
 export function Footer() {
   return (
@@ -16,10 +18,10 @@ export function Footer() {
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-terracotta-soft">
-                Follow along
+                Studio feed
               </p>
               <h2 className="mt-2 font-display text-3xl text-cream-soft">
-                From the studio feed
+                Classical moments, curated
               </h2>
             </div>
             <a
@@ -28,16 +30,14 @@ export function Footer() {
               rel="noopener noreferrer"
               className="text-sm text-cream/70 underline-offset-4 transition hover:text-cream hover:underline"
             >
-              @{site.name.toLowerCase()} on Instagram
+              Instagram
             </a>
           </div>
           <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-6 md:gap-3">
-            {instagramFeed.map((item) => (
+            {feed.map((item) => (
               <li key={item.id}>
-                <a
-                  href={site.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/work"
                   className="img-zoom group relative block aspect-square overflow-hidden"
                 >
                   <Image
@@ -49,7 +49,7 @@ export function Footer() {
                     loading="lazy"
                   />
                   <span className="absolute inset-0 bg-teal/0 transition group-hover:bg-teal/25" />
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -57,15 +57,13 @@ export function Footer() {
 
         <div className="grid gap-10 border-t border-cream/10 pt-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Link
-              href="/"
-              className="font-display text-3xl text-cream-soft"
-            >
+            <Link href="/" className="font-display text-3xl text-cream-soft">
               Alekhya<span className="text-terracotta-soft">Studio</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/65">
-              {site.tagline} Photography, craft, design, and web — made with
-              warmth in {site.location}.
+              {site.mission} Based in {site.location}. Dance photography,
+              Rangapravesha invitations, artist branding, and portfolio websites
+              for the classical performing arts.
             </p>
             <div className="mt-6 space-y-2 text-sm">
               <p>
@@ -121,7 +119,9 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-cream/10 pt-6 text-xs text-cream/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {site.displayName}. All rights reserved.
+          </p>
           <div className="flex gap-4">
             <a
               href={site.instagram}
