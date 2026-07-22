@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import { Cormorant_Garamond, Figtree } from "next/font/google";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { site } from "@/data/site";
+import "./globals.css";
+
+const display = Cormorant_Garamond({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const body = Figtree({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: `${site.name} — Photography, Craft & Design`,
+    template: `%s · ${site.name}`,
+  },
+  description: site.description,
+  openGraph: {
+    title: site.name,
+    description: site.description,
+    type: "website",
+    locale: "en_IN",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
+      <body className="grain-overlay relative min-h-full flex flex-col antialiased">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <Header />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
