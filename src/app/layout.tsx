@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/data/site";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
@@ -44,6 +45,7 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           Skip to content
         </a>
+        <Analytics />
         <Header />
         <main id="main" className="flex-1">
           {children}
