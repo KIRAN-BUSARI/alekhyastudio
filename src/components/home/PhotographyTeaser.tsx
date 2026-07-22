@@ -6,7 +6,7 @@ import { Button } from "@/components/shared/Button";
 import { photographyItems } from "@/data/photography";
 
 const preview = photographyItems.filter((item) =>
-  ["p1", "p3", "p5", "p7", "p10", "p13"].includes(item.id),
+  ["p3", "p17", "p19", "p20", "p18", "p24"].includes(item.id),
 );
 
 export function PhotographyTeaser() {
