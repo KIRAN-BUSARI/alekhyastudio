@@ -6,12 +6,12 @@ export const site = {
     "We help classical dancers, musicians, and academies present themselves with elegance — on stage, in print, and online.",
   description:
     "Alekhya Studio is a premium creative studio for India's classical performing arts community — dance photography, Rangapravesha and Arangetram invitations, artist branding, portfolio websites, and cultural marketing in Bangalore.",
-  email: "hello@alekhyastudio.com",
-  phone: "+91 98765 43210",
-  whatsapp: "https://wa.me/919876543210",
-  instagram: "https://www.instagram.com/alekhyastudio",
+  email: "saishashiby@gmail.com",
+  phone: "+91 9986563999",
+  whatsapp: "https://wa.me/9986563999",
+  instagram: "https://www.instagram.com/alekhyadancephoto",
   location: "Bangalore, India",
-  calendly: "https://calendly.com/alekhyastudio/session",
+  calendly: "https://calendly.com/",
 } as const;
 
 export const audiences = [

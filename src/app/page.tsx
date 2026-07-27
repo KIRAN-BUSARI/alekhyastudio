@@ -6,11 +6,14 @@ import { SignatureOffering } from "@/components/home/SignatureOffering";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { ContactSection } from "@/components/home/ContactSection";
+import { getHeroSlides } from "@/data/hero";
 
 export default function HomePage() {
+  const heroSlides = getHeroSlides();
+
   return (
     <>
-      <Hero />
+      <Hero slides={heroSlides} />
       <Manifesto />
       <Audience />
       <FeaturedWork />

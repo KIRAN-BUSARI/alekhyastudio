@@ -159,26 +159,3 @@ export const photographyItems: PhotoItem[] = [
     aspect: "landscape",
   },
 ];
-
-export const heroSlides = [
-  {
-    src: u("photo-1768491815837-87a90744f9e6", 2000),
-    alt: "Young classical dancer in traditional costume performing gracefully",
-  },
-  {
-    src: u("photo-1746983047239-cb817eba7d05", 2000),
-    alt: "Two Indian classical dancers performing in traditional costumes",
-  },
-  {
-    src: u("photo-1688820661462-a44e4b2770e8", 2000),
-    alt: "Bharatanatyam ensemble standing in formation on stage",
-  },
-  {
-    src: u("photo-1764014792666-0f9e3c8442a9", 2000),
-    alt: "Woman performing a traditional Indian classical dance",
-  },
-  {
-    src: u("photo-1774425243379-5f74f9da5a83", 2000),
-    alt: "Classical dancer portrait with expressive hand gesture",
-  },
-];
