@@ -1,4 +1,4 @@
-import { statSync } from "fs";
+import { existsSync, statSync } from "fs";
 import { join } from "path";
 
 export type HeroSlide = {
@@ -15,6 +15,7 @@ export type HeroSlide = {
 function withCacheBust(publicPath: string) {
   try {
     const full = join(process.cwd(), "public", publicPath);
+    if (!existsSync(full)) return publicPath;
     const mtime = Math.floor(statSync(full).mtimeMs);
     return `${publicPath}?v=${mtime}`;
   } catch {
@@ -29,8 +30,8 @@ function slide(
 ): HeroSlide {
   return {
     id: String(n),
-    desktop: withCacheBust(`/images/hero/img${n}.jpg`),
-    mobile: withCacheBust(`/images/hero/Mimg${n}.jpg`),
+    desktop: withCacheBust(`/images/hero/img${n}.webp`),
+    mobile: withCacheBust(`/images/hero/Mimg${n}.webp`),
     alt,
     ...positions,
   };
