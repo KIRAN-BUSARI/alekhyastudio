@@ -4,20 +4,24 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import {
   workCategories,
-  workItems,
   type WorkCategory,
+  type WorkItem,
 } from "@/data/work";
 import { Button } from "@/components/shared/Button";
 
-export function WorkGallery() {
+type WorkGalleryProps = {
+  items: WorkItem[];
+};
+
+export function WorkGallery({ items }: WorkGalleryProps) {
   const [active, setActive] = useState<WorkCategory>("all");
 
-  const items = useMemo(
+  const filtered = useMemo(
     () =>
       active === "all"
-        ? workItems
-        : workItems.filter((item) => item.category === active),
-    [active],
+        ? items
+        : items.filter((item) => item.category === active),
+    [active, items],
   );
 
   return (
@@ -49,8 +53,8 @@ export function WorkGallery() {
         })}
       </div>
 
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item) => (
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+        {filtered.map((item) => (
           <li key={item.id}>
             <article>
               <div
@@ -68,8 +72,9 @@ export function WorkGallery() {
                   alt={item.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                   loading="lazy"
+                  unoptimized={item.src.startsWith("/images/")}
                 />
               </div>
               <div className="mt-3">

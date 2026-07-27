@@ -13,6 +13,7 @@ import { CTABanner } from "@/components/shared/CTABanner";
 import { getService } from "@/data/services";
 import { pastSites } from "@/data/web";
 import { site } from "@/data/site";
+import { withBustedSrc } from "@/lib/publicAsset";
 
 const service = getService("websites");
 
@@ -22,6 +23,8 @@ export const metadata: Metadata = {
 };
 
 export default function WebsitesPage() {
+  const sites = withBustedSrc(pastSites);
+
   return (
     <>
       <PageHero
@@ -72,28 +75,39 @@ export default function WebsitesPage() {
               />
             </FadeIn>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {pastSites.map((item, i) => (
+              {sites.map((item, i) => (
                 <FadeIn key={item.id} delay={i * 70}>
                   <article>
-                    <div className="img-zoom relative aspect-[16/10] overflow-hidden">
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    <p className="mt-3 text-xs uppercase tracking-[0.16em] text-charcoal-muted">
-                      {item.category}
-                    </p>
-                    <h3 className="font-display text-2xl text-charcoal">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-charcoal-muted">
-                      {item.description}
-                    </p>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block"
+                    >
+                      <div className="img-zoom relative aspect-[16/10] overflow-hidden">
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover object-top"
+                          loading="lazy"
+                          unoptimized
+                        />
+                      </div>
+                      <p className="mt-3 text-xs uppercase tracking-[0.16em] text-charcoal-muted">
+                        {item.category}
+                      </p>
+                      <h3 className="font-display text-2xl text-charcoal transition group-hover:text-terracotta">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-charcoal-muted">
+                        {item.description}
+                      </p>
+                      <p className="mt-2 text-sm font-medium text-teal">
+                        Visit site →
+                      </p>
+                    </a>
                   </article>
                 </FadeIn>
               ))}

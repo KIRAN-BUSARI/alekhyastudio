@@ -5,7 +5,9 @@ import { FilterableGallery } from "@/components/photography/FilterableGallery";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { FadeIn } from "@/components/shared/FadeIn";
 import { getService } from "@/data/services";
+import { photographyItems } from "@/data/photography";
 import { site } from "@/data/site";
+import { withBustedSrc } from "@/lib/publicAsset";
 
 const service = getService("photography");
 
@@ -15,6 +17,8 @@ export const metadata: Metadata = {
 };
 
 export default function PhotographyPage() {
+  const items = withBustedSrc(photographyItems);
+
   return (
     <>
       <PageHero
@@ -49,7 +53,7 @@ export default function PhotographyPage() {
 
       <section className="px-5 pb-16 md:px-8 md:pb-24">
         <div className="mx-auto max-w-7xl">
-          <FilterableGallery />
+          <FilterableGallery items={items} />
         </div>
       </section>
 

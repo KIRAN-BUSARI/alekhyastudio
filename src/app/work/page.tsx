@@ -3,6 +3,8 @@ import { PageHero } from "@/components/shared/PageHero";
 import { WorkGallery } from "@/components/work/WorkGallery";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { site } from "@/data/site";
+import { workItems } from "@/data/work";
+import { withBustedSrc } from "@/lib/publicAsset";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function WorkPage() {
+  const items = withBustedSrc(workItems);
+
   return (
     <>
       <PageHero
@@ -20,7 +24,7 @@ export default function WorkPage() {
       />
       <section className="px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <WorkGallery />
+          <WorkGallery items={items} />
         </div>
       </section>
       <CTABanner

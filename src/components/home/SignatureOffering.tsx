@@ -2,10 +2,12 @@ import Image from "next/image";
 import { FadeIn } from "@/components/shared/FadeIn";
 import { Button } from "@/components/shared/Button";
 import { photographyItems } from "@/data/photography";
+import { publicAsset } from "@/lib/publicAsset";
 
 export function SignatureOffering() {
   const image =
-    photographyItems.find((item) => item.id === "p3") ?? photographyItems[0];
+    photographyItems.find((item) => item.id === "s1") ?? photographyItems[0];
+  const src = publicAsset(image.src);
 
   return (
     <section className="relative overflow-hidden bg-teal px-5 py-20 text-cream md:px-8 md:py-28">
@@ -17,12 +19,13 @@ export function SignatureOffering() {
         <FadeIn>
           <div className="img-zoom relative aspect-[4/5] overflow-hidden">
             <Image
-              src={image.src}
+              src={src}
               alt={image.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
               loading="lazy"
+              unoptimized
             />
           </div>
         </FadeIn>

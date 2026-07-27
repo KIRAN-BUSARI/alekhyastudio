@@ -4,21 +4,25 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import {
   photoCategories,
-  photographyItems,
   type PhotoCategory,
+  type PhotoItem,
 } from "@/data/photography";
 import { Button } from "@/components/shared/Button";
 import { site } from "@/data/site";
 
-export function FilterableGallery() {
+type FilterableGalleryProps = {
+  items: PhotoItem[];
+};
+
+export function FilterableGallery({ items }: FilterableGalleryProps) {
   const [active, setActive] = useState<PhotoCategory>("all");
 
-  const items = useMemo(
+  const filtered = useMemo(
     () =>
       active === "all"
-        ? photographyItems
-        : photographyItems.filter((item) => item.category === active),
-    [active],
+        ? items
+        : items.filter((item) => item.category === active),
+    [active, items],
   );
 
   return (
@@ -51,7 +55,7 @@ export function FilterableGallery() {
       </div>
 
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item) => (
+        {filtered.map((item) => (
           <li key={item.id}>
             <article>
               <div
@@ -71,6 +75,7 @@ export function FilterableGallery() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover"
                   loading="lazy"
+                  unoptimized={item.src.startsWith("/images/")}
                 />
               </div>
               <div className="mt-3">

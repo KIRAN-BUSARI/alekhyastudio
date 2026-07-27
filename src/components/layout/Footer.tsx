@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { photographyItems } from "@/data/photography";
 import { footerLinks, site } from "@/data/site";
+import { withBustedSrc } from "@/lib/publicAsset";
 
-const feed = photographyItems.slice(0, 6);
+const feed = withBustedSrc(photographyItems.slice(0, 6));
 
 export function Footer() {
   return (
@@ -47,6 +48,7 @@ export function Footer() {
                     sizes="(max-width: 768px) 50vw, 16vw"
                     className="object-cover"
                     loading="lazy"
+                    unoptimized={item.src.startsWith("/images/")}
                   />
                   <span className="absolute inset-0 bg-teal/0 transition group-hover:bg-teal/25" />
                 </Link>

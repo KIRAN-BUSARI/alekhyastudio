@@ -92,5 +92,5 @@ export const workItems: WorkItem[] = [
 ];
 
 export const featuredWork = workItems.filter((item) =>
-  ["w-p3", "w-p17", "w-p19", "w-inv1", "w-b1", "w-w1"].includes(item.id),
+  ["w-s1", "w-s2", "w-s3", "w-inv1", "w-b1", "w-w1"].includes(item.id),
 );

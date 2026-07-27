@@ -29,7 +29,83 @@ export type PhotoItem = {
 const u = (id: string, w = 1200) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
+const studioHero: PhotoItem[] = [
+  {
+    id: "s1",
+    title: "Stage Lights",
+    category: "stage",
+    alt: "Classical dancer in traditional costume performing on stage",
+    src: "/images/hero/img1.webp",
+    aspect: "landscape",
+  },
+  {
+    id: "s2",
+    title: "Warm Stage Light",
+    category: "bharatanatyam",
+    alt: "Bharatanatyam performance captured in warm stage light",
+    src: "/images/hero/img2.webp",
+    aspect: "landscape",
+  },
+  {
+    id: "s3",
+    title: "Ensemble Formation",
+    category: "arangetram",
+    alt: "Indian classical dance ensemble in formation",
+    src: "/images/hero/img3.webp",
+    aspect: "landscape",
+  },
+  {
+    id: "s4",
+    title: "Expressive Portrait",
+    category: "portrait",
+    alt: "Expressive classical dance portrait with traditional attire",
+    src: "/images/hero/img4.webp",
+    aspect: "landscape",
+  },
+  {
+    id: "s5",
+    title: "Mid-Performance",
+    category: "costume",
+    alt: "Young dancer in classical costume mid-performance",
+    src: "/images/hero/img5.webp",
+    aspect: "landscape",
+  },
+  {
+    id: "sm1",
+    title: "Stage Portrait I",
+    category: "stage",
+    alt: "Classical dancer portrait from mobile showreel frame one",
+    src: "/images/hero/Mimg1.webp",
+    aspect: "portrait",
+  },
+  {
+    id: "sm2",
+    title: "Stage Portrait II",
+    category: "bharatanatyam",
+    alt: "Classical dancer portrait from mobile showreel frame two",
+    src: "/images/hero/Mimg2.webp",
+    aspect: "portrait",
+  },
+  {
+    id: "sm3",
+    title: "Stage Portrait III",
+    category: "arangetram",
+    alt: "Classical dancer portrait from mobile showreel frame three",
+    src: "/images/hero/Mimg3.webp",
+    aspect: "portrait",
+  },
+  {
+    id: "sm4",
+    title: "Stage Portrait IV",
+    category: "costume",
+    alt: "Classical dancer portrait from mobile showreel frame four",
+    src: "/images/hero/Mimg4.webp",
+    aspect: "portrait",
+  },
+];
+
 export const photographyItems: PhotoItem[] = [
+  ...studioHero,
   {
     id: "p3",
     title: "First Stage",
